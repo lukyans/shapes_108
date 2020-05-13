@@ -1,0 +1,23 @@
+<nav class="navbar navbar-light" style="background-color: #563d7c">
+  <%= link_to "Shapes 108", root_path, class: "navbar-brand font-weight-bold text-light", style: "text-decoration: none" %>
+  <ul class="nav">
+    <li class="nav-item mr-1">
+      <button type="button" class="btn btn-default navbar-btn">
+        <%= link_to "Add App", "#", class: "text-light", style: "text-decoration: none" %>
+      </button>
+    </li>
+    <% if user_signed_in? %>
+      <li class="nav-item">
+        <button type="button" class="btn btn-default navbar-btn">
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "text-light", style: "text-decoration: none" %>
+        </button>
+      </li>
+    <% else %>
+      <li class="nav-item">
+        <button type="button" class="btn btn-default navbar-btn">
+          <%= link_to "Log In", new_user_session_path, method: :get, class: "text-light", style: "text-decoration: none" %>
+        </button>
+      </li>
+    <% end %>
+  </ul>
+</nav>
