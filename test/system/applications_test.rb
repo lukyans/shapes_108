@@ -1,24 +1,24 @@
 require "application_system_test_case"
 
-class ApplicationsTest < ApplicationSystemTestCase
+class ShapesTest < ApplicationSystemTestCase
   setup do
-    @application = applications(:one)
+    @shape = shapes(:one)
   end
 
   test "visiting the index" do
-    visit applications_url
-    assert_selector "h1", text: "Applications"
+    visit shapes_url
+    assert_selector "h1", text: "Shapes"
   end
 
   test "creating a Application" do
-    visit applications_url
+    visit shapes_url
     click_on "New Application"
 
-    fill_in "Color", with: @application.color
-    check "Default status" if @application.default_status
-    fill_in "Description", with: @application.description
-    fill_in "Link", with: @application.link
-    fill_in "Name", with: @application.name
+    fill_in "Color", with: @shape.color
+    check "Default status" if @shape.default_status
+    fill_in "Description", with: @shape.description
+    fill_in "Link", with: @shape.link
+    fill_in "Name", with: @shape.name
     click_on "Create Application"
 
     assert_text "Application was successfully created"
@@ -26,14 +26,14 @@ class ApplicationsTest < ApplicationSystemTestCase
   end
 
   test "updating a Application" do
-    visit applications_url
+    visit shapes_url
     click_on "Edit", match: :first
 
-    fill_in "Color", with: @application.color
-    check "Default status" if @application.default_status
-    fill_in "Description", with: @application.description
-    fill_in "Link", with: @application.link
-    fill_in "Name", with: @application.name
+    fill_in "Color", with: @shape.color
+    check "Default status" if @shape.default_status
+    fill_in "Description", with: @shape.description
+    fill_in "Link", with: @shape.link
+    fill_in "Name", with: @shape.name
     click_on "Update Application"
 
     assert_text "Application was successfully updated"
@@ -41,7 +41,7 @@ class ApplicationsTest < ApplicationSystemTestCase
   end
 
   test "destroying a Application" do
-    visit applications_url
+    visit shapes_url
     page.accept_confirm do
       click_on "Destroy", match: :first
     end
