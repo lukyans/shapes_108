@@ -11,9 +11,16 @@
             <p class="card-text"><%= shape.description %></p>
           </div>
           <div class="card-footer text-center">
-            <%= link_to "#{shape.link}", class:"text-muted", style: "text-decoration: none" do %>
-              Launch full shape
-            <% end %>
+            <div class="row">
+              <div class="col-10">
+              <%= link_to "#{shape.link}", class:"text-muted", style: "text-decoration: none" do %>
+                Launch full shape
+              <% end %>
+              </div>
+              <%= link_to hide_shape_path(shape), class:"col-2 text-danger", style: "text-decoration: none" do %>
+                <i class="fa fa-times-circle" aria-hidden="true"></i>
+              <% end %>
+            </div>
             </a>
           </div>
         </div>
