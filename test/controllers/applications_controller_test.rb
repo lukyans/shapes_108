@@ -1,48 +1,48 @@
 require 'test_helper'
 
-class ApplicationsControllerTest < ActionDispatch::IntegrationTest
+class ShapesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @application = applications(:one)
+    @shape = shapes(:one)
   end
 
   test "should get index" do
-    get applications_url
+    get shapes_url
     assert_response :success
   end
 
   test "should get new" do
-    get new_application_url
+    get new_shape_url
     assert_response :success
   end
 
-  test "should create application" do
+  test "should create shape" do
     assert_difference('Application.count') do
-      post applications_url, params: { application: { color: @application.color, default_status: @application.default_status, description: @application.description, link: @application.link, name: @application.name } }
+      post shapes_url, params: { shape: { color: @shape.color, default_status: @shape.default_status, description: @shape.description, link: @shape.link, name: @shape.name } }
     end
 
-    assert_redirected_to application_url(Application.last)
+    assert_redirected_to shape_url(Application.last)
   end
 
-  test "should show application" do
-    get application_url(@application)
+  test "should show shape" do
+    get shape_url(@shape)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_application_url(@application)
+    get edit_shape_url(@shape)
     assert_response :success
   end
 
-  test "should update application" do
-    patch application_url(@application), params: { application: { color: @application.color, default_status: @application.default_status, description: @application.description, link: @application.link, name: @application.name } }
-    assert_redirected_to application_url(@application)
+  test "should update shape" do
+    patch shape_url(@shape), params: { shape: { color: @shape.color, default_status: @shape.default_status, description: @shape.description, link: @shape.link, name: @shape.name } }
+    assert_redirected_to shape_url(@shape)
   end
 
-  test "should destroy application" do
+  test "should destroy shape" do
     assert_difference('Application.count', -1) do
-      delete application_url(@application)
+      delete shape_url(@shape)
     end
 
-    assert_redirected_to applications_url
+    assert_redirected_to shapes_url
   end
 end
