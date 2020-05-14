@@ -51,6 +51,13 @@ class ShapesController < ApplicationController
     end
   end
 
+  def hide
+    shape = Shape.find(params[:id])
+    shape.default_status = false
+    shape.save
+    redirect_to root_path
+  end
+
   # DELETE /shapes/1
   # DELETE /shapes/1.json
   def destroy
