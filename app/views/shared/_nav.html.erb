@@ -3,7 +3,10 @@
   <ul class="nav">
     <li class="nav-item mr-1">
       <button type="button" class="btn btn-default navbar-btn">
-        <%= link_to "Add App", "#", class: "text-light", style: "text-decoration: none" %>
+        <!-- Button trigger modal -->
+        <div class="text-light" style="text-decoration: none" data-toggle="modal" data-target="#appModal"%>
+          <i class="fa fa-plus-square" aria-hidden="true"></i> Add App
+        </div>
       </button>
     </li>
     <% if user_signed_in? %>
@@ -21,3 +24,5 @@
     <% end %>
   </ul>
 </nav>
+
+<%= render "shared/shape_modal" %>
