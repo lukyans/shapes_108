@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @applications = Application.all
+    @shapes = Shape.all
   end
 end
