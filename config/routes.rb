@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :applications
+  resources :shapes
   devise_for :users
 
   root 'home#index'
