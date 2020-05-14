@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shape.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @shape.description %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @shape.color %>
+</p>
+
+<p>
+  <strong>Default status:</strong>
+  <%= @shape.default_status %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @shape.link %>
+</p>
+<p>
+  <strong>Icon:</strong>
+  <%= @shape.icon %>
+</p>
+
+<%= link_to 'Edit', edit_shape_path(@shape) %> |
+<%= link_to 'Back', shapes_path %>
