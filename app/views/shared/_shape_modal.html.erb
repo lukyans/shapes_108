@@ -11,9 +11,9 @@
       <div class="modal-body">
         <div class="container mt-5">
           <div class="row">
-            <% Shape.all.each do |shape| %>
-              <div class="col mt-3" align="center">
-                <div class="card" style="width: 18rem;height: 19rem;">
+            <% Shape.inactive_shapes.each do |shape| %>
+              <div class="col-4 mt-3" align="center">
+                <div class="card" style="width: 18rem;height: 20rem;">
                   <div class="card-body">
                     <h5 class="card-title text-center"><%= shape.name %></h5>
                     <div class="mb-3 mt-3 text-muted text-center">
@@ -22,10 +22,17 @@
                     <p class="card-text"><%= shape.description %></p>
                   </div>
                   <div class="card-footer text-center">
-                    <%= link_to "#{shape.link}", class:"text-muted", style: "text-decoration: none" do %>
-                      Launch full shape
-                    <% end %>
-                    </a>
+                    <div class="row">
+                      <div class="col-8">
+                        <%= link_to "#{shape.link}", class:"text-muted", style: "text-decoration: none" do %>
+                          Launch full shape
+                        <% end %>
+                        </a>
+                      </div>
+                      <div class="col-4">
+                        <button type="button" class="btn btn-primary">Add</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -35,7 +42,6 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Add</button>
       </div>
     </div>
   </div>
