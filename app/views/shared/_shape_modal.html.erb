@@ -13,25 +13,25 @@
           <div class="row">
             <% Shape.inactive_shapes.each do |shape| %>
               <div class="col-4 mt-3" align="center">
-                <div class="card" style="width: 18rem;height: 20rem;">
+                <div class="card" style="width: 16rem;height: 16rem;">
                   <div class="card-body">
-                    <h5 class="card-title text-center"><%= shape.name %></h5>
+                    <h6 class="card-title text-center"><%= shape.name %></h6>
                     <div class="mb-3 mt-3 text-muted text-center">
-                      <i class="fa fa-<%= shape.icon %> fa-5x" aria-hidden="true"></i>
+                      <i class="fa fa-<%= shape.icon %> fa-3x" aria-hidden="true"></i>
                     </div>
-                    <p class="card-text"><%= shape.description %></p>
+                    <p class="card-text" style="font-size: 14px"><%= shape.description %></p>
                   </div>
                   <div class="card-footer text-center">
                     <div class="row">
                       <div class="col-8">
-                        <%= link_to "#{shape.link}", class:"text-muted", style: "text-decoration: none" do %>
+                        <%= link_to "#{shape.link}", class:"text-muted", style: "text-decoration: none;font-size: 15px" do %>
                           Launch full shape
                         <% end %>
                         </a>
                       </div>
-                      <div class="col-4">
-                        <button type="button" class="btn btn-primary">Add</button>
-                      </div>
+                      <%= link_to add_shape_path(shape), class:"col-4 text-primary", style: "text-decoration: none" do %>
+                        <button type="button" class="btn btn-primary btn-sm">Add</button>
+                      <% end %>
                     </div>
                   </div>
                 </div>
