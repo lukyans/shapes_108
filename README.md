@@ -23,4 +23,7 @@ Ruby version
 Rails version
 - 6.0.2
 
+Database
+- PostgreSQL
+
 #### Web App: <https://shapes108.herokuapp.com/>
