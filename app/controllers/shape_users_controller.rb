@@ -23,6 +23,6 @@ class ShapeUsersController < ApplicationController
     end
 
     def shape_user_params
-      params.require(:shape_user).permit( :shape_id, :launchpad_id)
+      params.require(:shape_user).permit(:shape_id, :launchpad_id)
     end
 end
