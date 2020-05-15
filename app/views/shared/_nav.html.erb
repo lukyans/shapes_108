@@ -1,5 +1,6 @@
 <nav class="navbar navbar-light" style="background-color: #563d7c">
-  <%= link_to "Shapes 108", root_path, class: "navbar-brand font-weight-bold text-light", style: "text-decoration: none" %>
+  <% user_signed_in? ? route = launchpad_path(@current_launchpad) : route = root_path %>
+  <%= link_to "Shapes 108", route, class: "navbar-brand font-weight-bold text-light", style: "text-decoration: none" %>
   <ul class="nav">
     <% if user_signed_in? %>
       <li class="nav-item mr-1">
