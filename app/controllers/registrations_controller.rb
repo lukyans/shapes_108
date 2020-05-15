@@ -3,7 +3,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def after_sign_up_path_for(resource)
     create_default_shapes_for_user
-    launchpad_path(@current_launchpad)
+    launchpad_path(current_launchpad)
   end
 
   private
