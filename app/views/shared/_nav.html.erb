@@ -1,14 +1,16 @@
 <nav class="navbar navbar-light" style="background-color: #563d7c">
   <%= link_to "Shapes 108", root_path, class: "navbar-brand font-weight-bold text-light", style: "text-decoration: none" %>
   <ul class="nav">
-    <li class="nav-item mr-1">
-      <button type="button" class="btn btn-default navbar-btn">
-        <!-- Button trigger modal -->
-        <div class="text-light" style="text-decoration: none" data-toggle="modal" data-target="#appModal"%>
-          <i class="fa fa-plus-square" aria-hidden="true"></i> Add App
-        </div>
-      </button>
-    </li>
+    <% if user_signed_in? %>
+      <li class="nav-item mr-1">
+        <button type="button" class="btn btn-default navbar-btn">
+          <!-- Button trigger modal -->
+          <div class="text-light" style="text-decoration: none" data-toggle="modal" data-target="#appModal"%>
+            <i class="fa fa-plus-square" aria-hidden="true"></i> Add App
+          </div>
+        </button>
+      </li>
+    <% end %> 
     <% if user_signed_in? %>
       <li class="nav-item">
         <button type="button" class="btn btn-default navbar-btn">
