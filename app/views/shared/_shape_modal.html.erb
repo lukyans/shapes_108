@@ -11,7 +11,7 @@
       <div class="modal-body">
         <div class="container mt-3">
           <div class="row">
-            <% added_shapes = ShapeUser.pluck(:shape_id) %>
+            <% added_shapes = ShapeUser.where(user_id: current_user).pluck(:shape_id) %>
             <% Shape.where.not(id: added_shapes).all.each do |shape| %>
               <div class="col-3 mt-3" align="center">
                 <div class="card" style="width: 16rem;height: 16rem;">
