@@ -1,24 +1,16 @@
-# README
+# Shapes 108
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### DB
+Clone the Project down to your local computer.
+Locally, change into root directory of shapes108
 
-Things you may want to cover:
+`rails db:create`
+`rails db:migrate`
 
-* Ruby version
+Ruby version
+- 2.7.1
 
-* System dependencies
+Rails version
+- 6.0.2
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+#### Web App: <https://shapes108.herokuapp.com/>
