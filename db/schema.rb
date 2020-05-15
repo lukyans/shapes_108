@@ -10,10 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_14_003759) do
+ActiveRecord::Schema.define(version: 2020_05_14_233709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "launchpads", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "shape_users", force: :cascade do |t|
+    t.bigint "shape_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "launchpad_id"
+    t.index ["launchpad_id"], name: "index_shape_users_on_launchpad_id"
+    t.index ["shape_id"], name: "index_shape_users_on_shape_id"
+    t.index ["user_id"], name: "index_shape_users_on_user_id"
+  end
 
   create_table "shapes", force: :cascade do |t|
     t.string "name"
@@ -38,4 +54,7 @@ ActiveRecord::Schema.define(version: 2020_05_14_003759) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "shape_users", "launchpads"
+  add_foreign_key "shape_users", "shapes"
+  add_foreign_key "shape_users", "users"
 end
