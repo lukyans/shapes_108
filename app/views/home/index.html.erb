@@ -12,13 +12,19 @@
           </div>
           <div class="card-footer text-center">
             <div class="row">
-              <div class="col-10">
+              <% if user_signed_in? %>
+                <div class="col-10">
+              <% else %>
+                <div class="col-12">
+              <% end %>
               <%= link_to "#{shape.link}", class:"text-muted", style: "text-decoration: none;font-size: 15px" do %>
                 Launch full shape
               <% end %>
               </div>
-              <%= link_to hide_shape_path(shape), class:"col-2 text-danger", style: "text-decoration: none" do %>
-                <i class="fa fa-times-circle" aria-hidden="true"></i>
+              <% if user_signed_in? %>
+                <%= link_to shape_user_hide_path(:id => shape), class:"col-2 text-danger", style: "text-decoration: none" do %>
+                  <i class="fa fa-times-circle" aria-hidden="true"></i>
+                <% end %>
               <% end %>
             </div>
             </a>
