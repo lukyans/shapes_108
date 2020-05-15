@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_05_14_233709) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "launchpad_id"
+    t.bigint "launchpad_id", null: false
     t.index ["launchpad_id"], name: "index_shape_users_on_launchpad_id"
     t.index ["shape_id"], name: "index_shape_users_on_shape_id"
     t.index ["user_id"], name: "index_shape_users_on_user_id"
