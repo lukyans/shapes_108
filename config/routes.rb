@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'launchpad/show'
+  devise_for :users, controllers: { registrations: "registrations" }
 
   root 'home#index'
   get 'home/index', to: 'home#index';
+  get 'launchpads/:id' => "launchpads#show", as: "launchpad"
 
-  resources :shapes do
-    member do
-      get :hide
-      get :add
-    end
-  end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'shape_users/:id/add' => "shape_users#add", as: "shape_user_add"
+  get 'shape_users/:id/hide' => "shape_users#hide", as: "shape_user_hide"
+  get 'shape_users' => "shape_users#create"
+  get 'shape_users/:id' => "shape_users#show", as: "shape_user"
+  delete 'shape_users/:id' => "shape_users#destroy"
+
+  resources :shapes
 end
